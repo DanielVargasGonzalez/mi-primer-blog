@@ -45,6 +45,7 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
+    text-align: center;
 }
 
 .post h1 a, .post h1 a:visited {
@@ -53,4 +54,19 @@ h1, h2, h3, h4 {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+h1 {
+    border: 4px dashed #000;
+    text-align: center;
+}
+
+.foto {
+    position: absolute;
+    left: 950px;
+}
+
+.row {
+    position: relative;
+    right: -230px;
 }

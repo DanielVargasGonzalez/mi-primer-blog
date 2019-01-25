@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    <img src="https://ibb.co/kMTNPm1" alt="" style="width:500px;height:600px;">
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -31,6 +32,6 @@
                 </div>
             {% endif %}
             {% empty %}
-                <p>No comments here yet :(</p>
+                <p>Sin comentarios :(</p>
         {% endfor %}
 {% endblock %}

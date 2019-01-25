@@ -3,7 +3,7 @@
 {% load static %}
 <html>
     <head>
-        <title>El blog de Daniel</title>
+        <title>Daniel Vargas</title>
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -19,7 +19,12 @@
             {% else %}
                  <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
-            <h1><a href="/">El blog de Daniel</a></h1>
+            <div id="foto" class="foto">
+                <a href="https://ibb.co/kMTNPm1"><img src="https://i.ibb.co/kMTNPm1/fotocara.png" alt="" height="100px" width="100px" border="1" class="img-circle"></a>
+            </div>
+            <div class="titulo">
+                <h1><a href="/">Daniel Vargas</a></h1>
+            </div>
         </div>
         <div class="content container">
             <div class="row">
