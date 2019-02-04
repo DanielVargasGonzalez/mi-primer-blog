@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="container" style="width: 100%;"></div>
+</body>
+<script src="scripts/jquery.js" ></script>
+<script src="scripts/highcharts.js"></script>
+<script src="scripts/exporting.js"></script>
+	<script>
+		Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Herramientas usadas'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Uso',
+        colorByPoint: true,
+        data: [{
+            name: 'Python',
+            y: 94.60,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'HTML',
+            y: 2.00
+        }, {
+            name: 'JavaScript',
+            y: 2.00
+        }, {
+            name: 'CSS',
+            y: 1.30
+        }, {
+            name: 'Shell',
+            y: 0.10
+        }]
+    }]
+});
+	</script>
+</html>
