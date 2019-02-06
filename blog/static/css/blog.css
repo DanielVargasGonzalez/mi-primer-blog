@@ -16,6 +16,8 @@ body {
 
 .content {
     margin-left: 40px;
+    margin: auto;
+    width: 100%;
 }
 
 h1, h2, h3, h4 {
@@ -63,7 +65,7 @@ h2 {
 
 .foto {
     position: absolute;
-    left: 300px;
+    left: 250px;
 }
 
 .row {
@@ -73,17 +75,26 @@ h2 {
 
 .titulo {
     position: relative;
-    right: -480px;
+    right: -600px;
 }
 
 .abrerepo {
+    margin: auto;
+    width: 50%;
     position: relative;
-    right: -315px;
+    right: -215px;
 }
 
 h3 {
+    margin: auto;
+    width: 50%;
     position: relative;
-    right: -210px;
+    right: -60px;
+}
+
+h1 {
+    position: relative;
+    right: 100px;
 }
 
 .contacto{
