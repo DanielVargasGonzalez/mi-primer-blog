@@ -88,10 +88,7 @@ h2 {
 }
 
 h3 {
-    margin: auto;
-    width: 50%;
-    position: relative;
-    right: -60px;
+    text-align: center;
 }
 
 h1 {
