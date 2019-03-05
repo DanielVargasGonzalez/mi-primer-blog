@@ -3,27 +3,17 @@
 {% block content %}
     {% for post in posts %}
         <div class="post">
-        	<!--
             <div class="date">
                 {{ post.published_date }}
             </div>
-        -->	
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.comments.count }}</a>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p class="card-text">{{ post.text|linebreaksbr }}</p>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.comments.count }}</a>
+                </div>
+            </div>
         </div>
     {% endfor %}
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <h3>Dale click para ver mis Repositorios</h3>
-    <div id="abrerepo">
-        <button class="abrerepo">click aquí</button>
-        <br><br><br><br>
-    </div>
-    <script>
-        $("#abrerepo").click(function(e){
-            e.preventDefault();
-            window.location = "https://github.com/DanielVargasGonzalez?tab=repositories";    
-        });
-    </script>
-    <iframe class="highcharts-iframe" src="https://cloud.highcharts.com/embed/LFAU6gmfA/" style="border: 0; width: 100%; height: 500px"></iframe>
 {% endblock %}
