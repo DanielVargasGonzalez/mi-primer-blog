@@ -6,7 +6,7 @@ SECRET_KEY = '5*s)53me8@(_%^3(^=6&c%@^iv$u5u8+2&@!p-qllj=i!%k-g&'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1',dvg.pythonanywhere.com]
 
 LOGIN_REDIRECT_URL = '/'
 
