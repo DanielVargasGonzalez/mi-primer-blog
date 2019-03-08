@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
     {% for post in posts %}
         <div class="post">
             <div class="date">
@@ -10,10 +11,64 @@
                 <div class="card-body">
                     <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                     <p class="card-text">{{ post.text|linebreaksbr }}</p>
-                    <a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.comments.count }}</a>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.comments.count }}, comentarios aprobados: {{ post.approved_comments.count }}</a>
                 </div>
             </div>
         </div>
     {% endfor %}
+    <script>
+        var contador=0
+        var aprobados=0
+        {% for post in posts %}
+            contador= contador + {{ post.comments.count }}
+            aprobados= aprobados + {{ post.approved_comments.count }}
+        {% endfor %}
+    </script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+    <script>
+        Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'relación post/commentarios totales/c.aprobados'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Posts',
+            y: {{ posts.count }},
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Comentarios totales',
+            y: contador,
+        }, {
+            name: 'comentarios aprobados',
+            y: aprobados,
+        },]
+    }]
+});
+    </script>
 {% endblock %}
